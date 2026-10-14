@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Student Registration</h1>
+      <p>Complete your details below. All fields are required.</p>
+    </header>
+
+    <form id="registrationForm" novalidate>
+      <div class="grid">
+        <div class="field" id="studentIdField">
+          <label for="studentId">Student ID</label>
+          <input id="studentId" name="studentId" type="text"
+                 placeholder="2026-0001"
+                 data-label="Student ID" data-required="true"
+                 required aria-describedby="studentIdError">
+          <small id="studentIdError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="fullNameField">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" name="fullName" type="text"
+                 placeholder="Enter your full name"
+                 data-label="Full Name" data-required="true"
+                 required aria-describedby="fullNameError">
+          <small id="fullNameError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="emailField">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email"
+                 placeholder="student@example.com"
+                 data-label="Email" data-required="true"
+                 required aria-describedby="emailError">
+          <small id="emailError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="phoneField">
+          <label for="phone">Phone Number</label>
+          <input id="phone" name="phone" type="tel"
+                 pattern="09[0-9]{9}" placeholder="09123456789"
+                 data-label="Phone Number" data-required="true"
+                 required aria-describedby="phoneError">
+          <small id="phoneError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="dobField">
+          <label for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="date"
+                 data-label="Date of Birth" data-required="true"
+                 required aria-describedby="dobError">
+          <small id="dobError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <fieldset class="field" id="genderField">
+          <legend>Gender</legend>
+
+          <div class="choices">
+            <label>
+              <input id="male" name="gender" type="radio" value="Male"
+                     data-label="Gender" data-required="true"
+                     required aria-describedby="genderError">
+              Male
+            </label>
+
+            <label>
+              <input id="female" name="gender" type="radio" value="Female"
+                     data-label="Gender" data-required="true"
+                     required aria-describedby="genderError">
+              Female
+            </label>
+
+            <label>
+              <input id="otherGender" name="gender" type="radio"
+                     value="Prefer not to say"
+                     data-label="Gender" data-required="true"
+                     required aria-describedby="genderError">
+              Prefer not to say
+            </label>
+          </div>
+
+          <small id="genderError" class="error-message"
+                 aria-live="polite"></small>
+        </fieldset>
+
+        <div class="field" id="programField">
+          <label for="program">Program</label>
+          <select id="program" name="program"
+                  data-label="Program" data-required="true"
+                  required aria-describedby="programError">
+            <option value="">Select program</option>
+            <option>BS Information Technology</option>
+            <option>BS Computer Science</option>
+            <option>BS Hospitality Management</option>
+            <option>BS Business Administration</option>
+          </select>
+          <small id="programError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="yearLevelField">
+          <label for="yearLevel">Year Level</label>
+          <select id="yearLevel" name="yearLevel"
+                  data-label="Year Level" data-required="true"
+                  required aria-describedby="yearLevelError">
+            <option value="">Select year level</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+          </select>
+          <small id="yearLevelError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="passwordField">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password"
+                 placeholder="At least 8 characters"
+                 data-label="Password" data-required="true"
+                 required aria-describedby="passwordError">
+          <small id="passwordError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+
+        <div class="field" id="confirmPasswordField">
+          <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" name="confirmPassword"
+                 type="password" placeholder="Re-enter your password"
+                 data-label="Confirm Password" data-required="true"
+                 required aria-describedby="confirmPasswordError">
+          <small id="confirmPasswordError" class="error-message"
+                 aria-live="polite"></small>
+        </div>
+      </div>
+
+      <button type="button" id="togglePassword"
+              aria-controls="password confirmPassword">
+        Show passwords
+      </button>
+
+      <div class="field" id="addressField">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="2"
+                  placeholder="House number, street, city or municipality"
+                  data-label="Address" data-required="true"
+                  required aria-describedby="addressError"></textarea>
+        <small id="addressError" class="error-message"
+               aria-live="polite"></small>
+      </div>
+
+      <div class="field agreement" id="agreementField">
+        <label>
+          <input id="agreement" name="agreement" type="checkbox"
+                 data-label="Agreement" data-required="true"
+                 required aria-describedby="agreementError">
+          I confirm that the information I entered is correct.
+        </label>
+        <small id="agreementError" class="error-message"
+               aria-live="polite"></small>
+      </div>
+
+      <p id="successMessage" role="status"></p>
+
+      <div class="actions">
+        <button type="submit" class="primary">Register student</button>
+        <button type="reset">Reset form</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,201 @@
+/* Basic student registration form styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px 15px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #eaf2f8;
+  color: #222;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 25px;
+  background-color: white;
+  border: 1px solid #bbcddd;
+  border-radius: 5px;
+}
+
+header {
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  color: #555;
+  font-size: 12px;
+}
+
+h1 {
+  margin: 8px 0;
+  color: #245b85;
+  font-size: 25px;
+}
+
+header p {
+  margin: 0;
+  color: #555;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+}
+
+.field {
+  min-width: 0;
+  margin-bottom: 7px;
+}
+
+label,
+legend {
+  font-size: 14px;
+}
+
+.field > label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: white;
+  color: #222;
+  font: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible {
+  outline: 2px solid #3976a3;
+  outline-offset: 1px;
+}
+
+fieldset {
+  padding: 0;
+  border: none;
+}
+
+legend {
+  margin-bottom: 8px;
+}
+
+.choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 7px 0;
+}
+
+.choices label {
+  font-size: 12px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #245b85;
+}
+
+/* Error class is added and removed in JavaScript. */
+.error input:not([type="radio"]):not([type="checkbox"]),
+.error select,
+.error textarea {
+  border-color: #bc263b;
+  background-color: #fff7f7;
+}
+
+fieldset.error,
+.agreement.error {
+  outline: 1px solid #bc263b;
+  outline-offset: 3px;
+}
+
+.error-message {
+  display: block;
+  min-height: 16px;
+  margin-top: 4px;
+  color: #bc263b;
+  font-size: 12px;
+}
+
+button {
+  padding: 9px 14px;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  background-color: #eee;
+  color: #222;
+  font: inherit;
+  cursor: pointer;
+}
+
+#togglePassword {
+  padding: 6px 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+
+#togglePassword.is-visible {
+  background-color: #dcebf6;
+  border-color: #245b85;
+}
+
+.agreement {
+  margin-top: 10px;
+}
+
+.agreement label {
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.primary {
+  background-color: #245b85;
+  border-color: #245b85;
+  color: white;
+}
+
+#successMessage {
+  color: #226536;
+  font-weight: bold;
+}
+
+#successMessage:empty {
+  display: none;
+}
+
+.note {
+  color: #777;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
